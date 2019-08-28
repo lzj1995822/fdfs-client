@@ -1,0 +1,17 @@
+server:
+  port: 8087
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 2000
+  pool:
+    test-on-borrow: true
+    #从池中借出的对象的最大数目
+    maxTotal: 100
+    #获取连接时的最大等待毫秒数100
+    maxWaitMillis: 1000
+  tracker-list:
+    - 172.16.0.199:22122
