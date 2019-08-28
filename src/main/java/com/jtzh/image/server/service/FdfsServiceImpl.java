@@ -25,12 +25,14 @@ public class FdfsServiceImpl {
 
     public String upload(MultipartFile file) {
         Date start = new Date();
+        System.out.println("开始时间："+start.getTime());
         String originalFileName = file.getOriginalFilename();
         String extension = originalFileName.substring(originalFileName.lastIndexOf(".") + 1);
         try {
             String path = uploadFile(file.getBytes(), file.getSize(), extension);
-            System.out.print("上传消耗时长:");
-            System.out.println(start.getTime() - new Date().getTime());
+            Date end = new Date();
+            System.out.println("结束时间："+end.getTime());
+            System.out.println("上传消耗时长:" + (end.getTime() - start.getTime()));
             return path;
         } catch (IOException e) {
             e.printStackTrace();
