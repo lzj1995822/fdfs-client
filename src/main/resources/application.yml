@@ -5,13 +5,17 @@ spring:
     multipart:
       max-file-size: 10MB
 fdfs:
-  so-timeout: 1500
-  connect-timeout: 2000
-  pool:
-    test-on-borrow: true
-    #´Ó³ØÖĞ½è³öµÄ¶ÔÏóµÄ×î´óÊıÄ¿
-    maxTotal: 100
-    #»ñÈ¡Á¬½ÓÊ±µÄ×î´óµÈ´ıºÁÃëÊı100
-    maxWaitMillis: 1000
-  tracker-list:
+  soTimeout: 5000
+  connectTimeout: 6000
+  thumbImage:             #ç¼©ç•¥å›¾ç”Ÿæˆå‚æ•°
+    width: 150
+    height: 150
+  trackerList:
     - 172.16.0.199:22122
+  pool:
+    max-total: -1
+    max-wait-millis: 5000
+    max-total-per-key: 50
+    max-idle-per-key: 30
+    min-idle-per-key: 20
+    test-on-borrow: true
