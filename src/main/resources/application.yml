@@ -4,6 +4,19 @@ spring:
   servlet:
     multipart:
       max-file-size: 10MB
+  redis:
+    #    host: localhost
+    host: 172.16.0.199
+    port: 6379
+    password: abc123
+    database: 1
+    timeout: 1s
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms
 fdfs:
   soTimeout: 5000
   connectTimeout: 6000
@@ -12,6 +25,7 @@ fdfs:
     height: 150
   trackerList:
     - 172.16.0.199:22122
+    - 172.22.116.2:22122
   pool:
     max-total: -1
     max-wait-millis: 5000
