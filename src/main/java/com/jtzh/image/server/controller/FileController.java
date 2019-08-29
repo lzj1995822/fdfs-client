@@ -24,9 +24,9 @@ public class FileController {
     public String upload(HttpServletRequest request, HttpServletResponse response, MultipartFile file) {
         System.out.println("----开始处理请求-----");
         if (accessTokenInterceptor.preHandle(request, response)) {
-           return fdfsService.upload(file);
+           return "http://122.97.218.162:8888/" + fdfsService.upload(file);
         }
-        return null;
+        return "false";
     }
 
     @GetMapping("/hello")
