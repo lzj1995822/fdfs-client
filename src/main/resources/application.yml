@@ -25,7 +25,6 @@ fdfs:
     height: 150
   trackerList:
     - 172.16.0.199:22122
-    - 172.22.116.2:22122
   pool:
     max-total: -1
     max-wait-millis: 5000
