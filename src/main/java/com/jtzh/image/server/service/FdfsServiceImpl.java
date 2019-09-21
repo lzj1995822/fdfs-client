@@ -52,12 +52,11 @@ public class FdfsServiceImpl {
                 uploadAmount--;
                 return FDFS_IMG_URL + path;
             } else {
-                logger.info("启动缓存图片");
+                logger.info("启动缓存图片" + uploadAmount);
                 return insert2Redis(file);
             }
 
         } catch (Exception e) {
-            logger.info(e.toString());
             logger.info("文件上传失败，缓存入Redis处理，文件名",originalFileName);
             return insert2Redis(file);
         }
